@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.gymlog.data.entity.Exercise
 import com.example.gymlog.data.ExerciseRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -15,6 +16,7 @@ class ExerciseViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _searchQuery = MutableStateFlow("")
+    @OptIn(ExperimentalCoroutinesApi::class)
     val exercises = _searchQuery.flatMapLatest { query ->
         if (query.isEmpty()) {
             repository.getAllExercises()

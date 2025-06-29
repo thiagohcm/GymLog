@@ -1,5 +1,6 @@
 package com.example.gymlog.ui.adapters
 
+        import android.annotation.SuppressLint
         import android.view.LayoutInflater
         import android.view.ViewGroup
         import androidx.core.view.isVisible
@@ -19,6 +20,7 @@ package com.example.gymlog.ui.adapters
             inner class ExerciseViewHolder(private val binding: ItemExerciseBinding) :
                 RecyclerView.ViewHolder(binding.root) {
 
+                @SuppressLint("SetTextI18n")
                 fun bind(exercise: Exercise) {
                     binding.apply {
                         tvName.text = exercise.name

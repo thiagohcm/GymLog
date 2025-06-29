@@ -1,5 +1,6 @@
 package com.example.gymlog.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.gymlog.databinding.FragmentExerciseFormBinding
 import com.example.gymlog.ui.viewmodel.ExerciseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import kotlin.toString
 
 @AndroidEntryPoint
 class ExerciseFormFragment : Fragment() {
@@ -33,6 +35,7 @@ class ExerciseFormFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -77,11 +80,11 @@ class ExerciseFormFragment : Fragment() {
                         editTextSeries.setText(exercise.series.toString())
                         editTextReps.setText(exercise.repetitions.toString())
                         editTextNotes.setText(exercise.notes ?: "")
-                        isFavorite = exercise.isFavorite // Carrega o estado de favorito
+                        isFavorite = exercise.isFavorite
                     }
                 }
             } catch (e: Exception) {
-                Toast.makeText(context, "Erro ao carregar exercício", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Erro ao carregar exercício: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
     }
