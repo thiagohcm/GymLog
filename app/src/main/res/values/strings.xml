@@ -5,4 +5,11 @@
     <string name="exercise_list_description">Lista de exercícios disponíveis</string>
     <string name="delete_exercise">Deletar exercício</string>
     <string name="fav_exercise">Favoritar exercício</string>
+    <string name="exercise_name_hint">Nome do exercício</string>
+    <string name="category_hint">Categoria</string>
+    <string name="series_hint">Séries</string>
+    <string name="reps_hint">Repetições</string>
+    <string name="notes_hint">Observações</string>
+    <string name="save_button">Salvar</string>
+    <string name="save_button_description">Salvar exercício</string>
 </resources>
