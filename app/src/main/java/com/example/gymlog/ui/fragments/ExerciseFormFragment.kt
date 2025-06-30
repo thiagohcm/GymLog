@@ -11,12 +11,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gymlog.data.entity.Exercise
 import com.example.gymlog.databinding.FragmentExerciseFormBinding
+import com.example.gymlog.model.ExerciseModel
 import com.example.gymlog.ui.viewmodel.ExerciseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import kotlin.toString
 
 @AndroidEntryPoint
 class ExerciseFormFragment : Fragment() {
@@ -97,14 +96,14 @@ class ExerciseFormFragment : Fragment() {
             val reps = binding.editTextReps.text.toString().toIntOrNull() ?: 0
             val notes = binding.editTextNotes.text.toString().takeIf { it.isNotBlank() }
 
-            val exercise = Exercise(
+            val exercise = ExerciseModel(
                 id = if (exerciseId != -1L) exerciseId else 0L,
                 name = name,
                 category = category,
                 series = series,
                 repetitions = reps,
                 notes = notes,
-                isFavorite = isFavorite // Usa o estado de favorito salvo
+                isFavorite = isFavorite
             )
 
             lifecycleScope.launch {
