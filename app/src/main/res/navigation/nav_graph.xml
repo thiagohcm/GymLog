@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/exerciseListFragment"
         android:name="com.example.gymlog.ui.fragments.ExerciseListFragment"
-        android:label="Lista de Exercícios">
+        android:label="Exercícios">
         <action
             android:id="@+id/action_list_to_add"
             app:destination="@id/exerciseFormFragment" />
