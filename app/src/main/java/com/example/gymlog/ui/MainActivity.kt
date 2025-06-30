@@ -21,7 +21,6 @@ package com.example.gymlog.ui
                     .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
                 navController = navHostFragment.navController
 
-                // Configuração da ActionBar com o Navigation
                 val appBarConfiguration = AppBarConfiguration(navController.graph)
                 setupActionBarWithNavController(navController, appBarConfiguration)
             }
